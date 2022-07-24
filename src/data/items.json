@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "Fallout",
+      "price": 10.99,
+      "imgUrl": "/images/fallout.webp"
+    },
+    {
+      "id": 2,
+      "name": "Half-life 2",
+      "price": 11.99,
+      "imgUrl": "/images/h2.webp"
+    },
+    {
+      "id": 3,
+      "name": "The Witcher 3: Wild Hunt",
+      "price": 22.05,
+      "imgUrl": "/images/witcher.jpg"
+    },
+    {
+      "id": 4,
+      "name": "The Elder Scrolls IV: Oblivion",
+      "price": 14.00,
+      "imgUrl": "/images/tesiv.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Grand Theft Auto V",
+      "price": 69.99,
+      "imgUrl": "/images/gtav.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Batman: Arkham City",
+      "price": 20.99,
+      "imgUrl": "/images/batman.jpg"
+    }
+  ]
