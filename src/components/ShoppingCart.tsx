@@ -6,9 +6,11 @@ import storeItems from '../data/items.json'
 
 export function ShoppingCart() {
   const { cartItems } = useShoppingCart()
+
   const cost = cartItems?.reduce((total, cartItem) => {
     const item = storeItems.find((i) => i.id === cartItem.id)
-    return total + (item?.price || 0) * cartItem.quantity
+    let totalPrice = total + (item?.price || 0) * cartItem.quantity
+    return totalPrice
   }, 0)
 
   return (
