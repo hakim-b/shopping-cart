@@ -91,7 +91,6 @@ export function CartProvider({ children }: ProviderProps) {
       }}
     >
       {children}
-      <ShoppingCart/>
     </CartContext.Provider>
   )
 }
