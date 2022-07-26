@@ -20,6 +20,8 @@ export function ShoppingCart() {
       </label>
       <h1 className="text-3xl font-bold">Cart</h1>
 
+      <br />
+
       <div className="flex flex-col gap-3">
         {cartItems?.map((item) => (
           <CartItem key={item.id} {...item} />
