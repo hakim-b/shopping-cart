@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext } from 'react'
+import { ShoppingCart } from '../components/ShoppingCart'
 import { useLocalStorage } from '../hooks/useLocalStorage'
 
 type ProviderProps = {
@@ -90,6 +91,7 @@ export function CartProvider({ children }: ProviderProps) {
       }}
     >
       {children}
+      <ShoppingCart/>
     </CartContext.Provider>
   )
 }

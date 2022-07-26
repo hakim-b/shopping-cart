@@ -9,7 +9,7 @@ export function ShoppingCart() {
 
   const cost = cartItems?.reduce((total, cartItem) => {
     const item = storeItems.find((i) => i.id === cartItem.id)
-    let totalPrice = total + (item?.price || 0) * cartItem.quantity
+    let totalPrice: number = total + (item?.price || 0) * cartItem.quantity
     return totalPrice
   }, 0)
 
@@ -25,7 +25,10 @@ export function ShoppingCart() {
           <CartItem key={item.id} {...item} />
         ))}
 
-        <h3 className="m-auto font-bold text-xl">
+        <h3
+          className="m-auto font-bold text-xl"
+          onMouseOver={() => console.log(cost)}
+        >
           Total: {formatCurrency(cost)}
         </h3>
       </div>
