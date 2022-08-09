@@ -41,7 +41,7 @@ export function ThemeDropdown() {
   return (
     <select className="select w-52 max-w-xs" data-choose-theme>
       {themes.map((value) => (
-        <option key={value.toLowerCase()} value={value.toLowerCase()}>{value}</option>
+        <option key={value.toLowerCase()} value={value.toLowerCase()} className='text-lg'>{value}</option>
       ))}
     </select>
   )
