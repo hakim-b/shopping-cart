@@ -1,15 +1,17 @@
-import { useShoppingCart } from '../context/CartContext'
-import { formatCurrency } from '../utilities/currencyConverter'
+import { useShoppingCart } from "../context/CartContext";
+import { formatCurrency } from "../utilities/currencyConverter";
+import React from "react";
 
 type StoreItemProps = {
-  id: number
-  name: string
-  price: number
-  imgURL: string
-}
+  id: number;
+  name: string;
+  price: number;
+  imgURL: string;
+};
 
 export function StoreItem({ id, name, price, imgURL }: StoreItemProps) {
-  const {getItemQty, increaseItemQty, decreaseItemQty, removeFromCart} = useShoppingCart();
+  const { getItemQty, increaseItemQty, decreaseItemQty, removeFromCart } =
+    useShoppingCart();
   const quantity = getItemQty(id);
 
   const QtyCounter = () => {
@@ -17,15 +19,29 @@ export function StoreItem({ id, name, price, imgURL }: StoreItemProps) {
       <>
         <div className="flex flex-col gap-6">
           <div>
-            <button className="btn btn-info" onClick={()=>decreaseItemQty(id)}>-</button>
+            <button
+              className="btn btn-info"
+              onClick={() => decreaseItemQty(id)}
+            >
+              -
+            </button>
             {quantity} in cart
-            <button className="btn btn-info" onClick={()=>{increaseItemQty(id)}} >+</button>
+            <button
+              className="btn btn-info"
+              onClick={() => {
+                increaseItemQty(id);
+              }}
+            >
+              +
+            </button>
           </div>
-          <button className="btn btn-error" onClick={()=>removeFromCart(id)}>Remove</button>
+          <button className="btn btn-error" onClick={() => removeFromCart(id)}>
+            Remove
+          </button>
         </div>
       </>
-    )
-  }
+    );
+  };
 
   return (
     <div className="card w-96 h-auto bg-base-100 shadow-2xl">
@@ -41,12 +57,17 @@ export function StoreItem({ id, name, price, imgURL }: StoreItemProps) {
         <p>{formatCurrency(price)}</p>
         <div className="card-actions">
           {quantity === 0 ? (
-            <button className="btn btn-info" onClick={()=>increaseItemQty(id)}>Add to cart</button>
+            <button
+              className="btn btn-info"
+              onClick={() => increaseItemQty(id)}
+            >
+              Add to cart
+            </button>
           ) : (
             <QtyCounter />
           )}
         </div>
       </div>
     </div>
-  )
+  );
 }

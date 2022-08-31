@@ -1,18 +1,19 @@
-import { useShoppingCart } from '../context/CartContext'
-import storeItems from '../data/items.json'
-import { formatCurrency } from '../utilities/currencyConverter'
+import { useShoppingCart } from "../context/CartContext";
+import storeItems from "../data/items.json";
+import { formatCurrency } from "../utilities/currencyConverter";
+import React from "react";
 
 type CartItemProps = {
-  id: number
-  quantity: number
-}
+  id: number;
+  quantity: number;
+};
 
 export function CartItem({ id, quantity }: CartItemProps) {
-  const { removeFromCart } = useShoppingCart()
-  const item = storeItems.find((i) => i.id == id)
+  const { removeFromCart } = useShoppingCart();
+  const item = storeItems.find((i) => i.id == id);
 
   if (item == null) {
-    return null
+    return null;
   }
 
   return (
@@ -25,7 +26,7 @@ export function CartItem({ id, quantity }: CartItemProps) {
 
       <div className="m-auto">
         <div>
-          {item.name}{' '}
+          {item.name}{" "}
           {quantity > 1 && <span className="text-xs">x{quantity}</span>}
         </div>
         <div className="text-xs">{formatCurrency(item.price)}</div>
@@ -39,5 +40,5 @@ export function CartItem({ id, quantity }: CartItemProps) {
         &times;
       </button>
     </div>
-  )
+  );
 }

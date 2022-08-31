@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-key */
 import storeItems from '../data/items.json'
 import { StoreItem } from '../components/StoreItem'
+import React from 'react';
 
 export function Store() {
   return (

@@ -1,10 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
-import { About } from './pages/About'
-import { Home } from './pages/Home'
-import { Store } from './pages/Store'
-import { Navbar } from './components/Navbar'
-import { CartProvider } from './context/CartContext'
-import { ShoppingCart } from './components/ShoppingCart'
+import { Routes, Route } from "react-router-dom";
+import { About } from "./pages/About";
+import { Home } from "./pages/Home";
+import { Store } from "./pages/Store";
+import { Navbar } from "./components/Navbar";
+import { CartProvider } from "./context/CartContext";
+import { ShoppingCart } from "./components/ShoppingCart";
+import React from "react";
 
 function App() {
   return (
@@ -25,13 +26,13 @@ function App() {
           <div className="drawer-side">
             <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
             <div className="menu p-4 overflow-y-auto w-96 bg-base-100 text-base-content">
-              <ShoppingCart/>
+              <ShoppingCart />
             </div>
           </div>
         </div>
       </CartProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
