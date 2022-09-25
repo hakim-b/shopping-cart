@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
-import { ThemeDropdown } from "./ThemeDropdown";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 import { useShoppingCart } from "../context/CartContext";
 import React from "react";
 
@@ -16,13 +16,10 @@ export function Navbar() {
         <NavLink to={"/store"} className="btn btn-ghost normal-case text-xl">
           Store
         </NavLink>
-        <NavLink to={"/about"} className="btn btn-ghost normal-case text-xl">
-          About
-        </NavLink>
       </div>
 
       <div className="navbar-end gap-5">
-        <ThemeDropdown />
+        <ThemeSwitcher />
         {cartQty > 0 && (
           <label
             htmlFor="my-drawer-4"
