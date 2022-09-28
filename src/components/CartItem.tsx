@@ -2,6 +2,7 @@ import { useShoppingCart } from "../context/CartContext";
 import storeItems from "../data/items.json";
 import { formatCurrency } from "../utilities/currencyConverter";
 import React from "react";
+import { Show } from "react-haiku";
 
 type CartItemProps = {
   id: number;
@@ -27,7 +28,11 @@ export function CartItem({ id, quantity }: CartItemProps) {
       <div className="m-auto">
         <div>
           {item.name}{" "}
-          {quantity > 1 && <span className="text-xs">x{quantity}</span>}
+          <Show>
+            <Show.When isTrue={quantity > 1}>
+              <span className="text-xs">x{quantity}</span>
+            </Show.When>
+          </Show>
         </div>
         <div className="text-xs">{formatCurrency(item.price)}</div>
       </div>

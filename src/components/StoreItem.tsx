@@ -1,6 +1,7 @@
 import { useShoppingCart } from "../context/CartContext";
 import { formatCurrency } from "../utilities/currencyConverter";
 import React from "react";
+import { Show } from "react-haiku";
 
 type StoreItemProps = {
   id: number;
@@ -56,16 +57,19 @@ export function StoreItem({ id, name, price, imgURL }: StoreItemProps) {
         <h2 className="card-title">{name}</h2>
         <p>{formatCurrency(price)}</p>
         <div className="card-actions">
-          {quantity === 0 ? (
-            <button
-              className="btn btn-info"
-              onClick={() => increaseItemQty(id)}
-            >
-              Add to cart
-            </button>
-          ) : (
-            <QtyCounter />
-          )}
+          <Show>
+            <Show.When isTrue={quantity === 0}>
+              <button
+                className="btn btn-info"
+                onClick={() => increaseItemQty(id)}
+              >
+                Add to cart
+              </button>
+            </Show.When>
+            <Show.Else>
+              <QtyCounter />
+            </Show.Else>
+          </Show>
         </div>
       </div>
     </div>

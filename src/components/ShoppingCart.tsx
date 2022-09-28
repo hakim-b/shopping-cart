@@ -4,9 +4,10 @@ import { formatCurrency } from "../utilities/currencyConverter";
 import { CartItem } from "./CartItem";
 import storeItems from "../data/items.json";
 import React from "react";
+import { For, Show } from "react-haiku";
 
 export function ShoppingCart() {
-  const { cartItems } = useShoppingCart();
+  const { cartItems, cartQty } = useShoppingCart();
 
   const cost = cartItems?.reduce((total, cartItem) => {
     const item = storeItems.find((i) => i.id === cartItem.id);
@@ -24,16 +25,22 @@ export function ShoppingCart() {
       <br />
 
       <div className="flex flex-col gap-3">
-        {cartItems?.map((item) => (
-          <CartItem key={item.id} {...item} />
-        ))}
+        <For
+          each={cartItems}
+          render={(item) => <CartItem key={item.id} {...item} />}
+        />
 
-        <h3
-          className="m-auto font-bold text-xl"
-          onMouseOver={() => console.log(cost)}
-        >
-          Total: {formatCurrency(cost)}
-        </h3>
+        <Show>
+          <Show.When isTrue={cartQty > 0}>
+            <h3 className="m-auto font-bold text-xl">
+              Total: {formatCurrency(cost)}
+            </h3>
+          </Show.When>
+
+          <Show.Else>
+            <h3 className="m-auto font-bold text-xl">Your cart is empty</h3>
+          </Show.Else>
+        </Show>
       </div>
     </>
   );
