@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
-import { ThemeSwitch } from "./ThemeSwitch";
+import { ThemeDropdown } from "./ThemeDropdown";
 import { useShoppingCart } from "../context/CartContext";
 import React from "react";
 import { Show } from "react-haiku";
@@ -20,7 +20,7 @@ export function Navbar() {
       </div>
 
       <div className="navbar-end gap-5">
-        <ThemeSwitch />
+        <ThemeDropdown />
         <Show>
           <Show.When isTrue={cartQty > 0}>
             <label
