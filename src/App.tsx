@@ -1,10 +1,10 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Store } from "./pages/Store";
 import { Navbar } from "./components/Navbar";
 import { CartProvider } from "./context/CartContext";
 import { ShoppingCart } from "./components/ShoppingCart";
-import React from "react";
 
 function App() {
   return (

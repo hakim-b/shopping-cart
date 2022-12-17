@@ -1,6 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
 import storeItems from "../data/items.json";
 import { StoreItem } from "../components/StoreItem";
-import React from "react";
 import { For } from "react-haiku";
 
 export function Store() {

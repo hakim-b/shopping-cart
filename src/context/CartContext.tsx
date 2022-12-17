@@ -1,6 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { createContext, ReactNode, useContext } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-import React from "react";
 
 type ProviderProps = {
   children: ReactNode;

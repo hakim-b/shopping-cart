@@ -1,8 +1,8 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { NavLink } from "react-router-dom";
 import { ShoppingCartIcon } from "@heroicons/react/solid";
 import { ThemeDropdown } from "./ThemeDropdown";
 import { useShoppingCart } from "../context/CartContext";
-import React from "react";
 import { Show } from "react-haiku";
 
 export function Navbar() {

@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+/* eslint-disable react/react-in-jsx-scope */
+import { useEffect } from "react";
 import { themeChange } from "theme-change";
 import { usePrefersTheme } from "react-haiku";
 

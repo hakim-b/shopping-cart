@@ -1,6 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { useShoppingCart } from "../context/CartContext";
 import { formatCurrency } from "../utilities/currencyConverter";
-import React from "react";
 import { Show } from "react-haiku";
 
 type StoreItemProps = {

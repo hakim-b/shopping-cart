@@ -1,9 +1,9 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { XIcon } from "@heroicons/react/solid";
 import { useShoppingCart } from "../context/CartContext";
 import { formatCurrency } from "../utilities/currencyConverter";
 import { CartItem } from "./CartItem";
 import storeItems from "../data/items.json";
-import React from "react";
 import { For, Show } from "react-haiku";
 
 export function ShoppingCart() {
