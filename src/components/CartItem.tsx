@@ -2,7 +2,7 @@
 import { useShoppingCart } from "../context/CartContext";
 import storeItems from "../data/items.json";
 import { formatCurrency } from "../utilities/currencyConverter";
-import { Show } from "react-haiku";
+import { If } from "react-haiku";
 
 type CartItemProps = {
   id: number;
@@ -28,11 +28,9 @@ export function CartItem({ id, quantity }: CartItemProps) {
       <div className="m-auto">
         <div>
           {item.name}{" "}
-          <Show>
-            <Show.When isTrue={quantity > 1}>
-              <span className="text-xs">x{quantity}</span>
-            </Show.When>
-          </Show>
+          <If isTrue={quantity > 1}>
+            <span className="text-xs">x{quantity}</span>
+          </If>
         </div>
         <div className="text-xs">{formatCurrency(item.price)}</div>
       </div>
